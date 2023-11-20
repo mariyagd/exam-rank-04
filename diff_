@@ -1,0 +1,119 @@
+4c4
+< /*   micro.c                                            :+:      :+:    :+:   */
+---
+> /*   microshell.c                                       :+:      :+:    :+:   */
+8,9c8,9
+< /*   Created: 2023/11/20 12:58:40 by mdanchev          #+#    #+#             */
+< /*   Updated: 2023/11/20 12:58:40 by mdanchev         ###   ########.fr       */
+---
+> /*   Created: 2023/11/16 19:08:15 by mdanchev          #+#    #+#             */
+> /*   Updated: 2023/11/16 19:08:15 by mdanchev         ###   ########.fr       */
+15c15
+< int error_(char *s1, char *s2)
+---
+> int	error_(char *s1, char *s2)
+17c17
+< 	int i;
+---
+> 	int		i;
+20c20
+< 	while (s1 && s1[i])
+---
+> 	if (s1)
+22,23c22,26
+< 		write(1, &s1[i], 1);
+< 		i++;
+---
+> 		while (s1[i])
+> 		{
+> 			write(2, &s1[i], 1);
+> 			i++;
+> 		}
+26c29
+< 	while (s2 && s2[i])
+---
+> 	if (s2)
+28,29c31,35
+< 		write(1, &s2[i], 1);
+< 		i++;
+---
+> 		while (s2[i])
+> 		{
+> 			write(2, &s2[i], 1);
+> 			i++;
+> 		}
+31c37
+< 	write(1, "\n", 1);
+---
+> 	write(2, "\n", 1);
+35c41
+< int cd_(char **av, int i)
+---
+> int		cd_(char **av, int i)
+39c45
+< 	if (chdir(av[1]) < 0)
+---
+> 	else if (chdir(av[1]) < 0)
+44c50
+< int exec(char **av, char **env, int i, int savefd)
+---
+> int exec(char **av, char **env, int i)
+46,49c52,55
+< 	int fd[2];
+< 	int status;
+< 	int has_pipe;
+< 	int pid;
+---
+> 	int		fd[2];
+> 	int		status;
+> 	int		has_pipe;
+> 	int		pid;
+59,61c65,66
+< 		av[i] = NULL;
+< 		close(savefd);
+< 		if (has_pipe && (close(fd[0]) < 0 || dup2(fd[1], STDOUT_FILENO) < 0 || close(fd[1]) < 0 ))
+---
+> 		av[i] = 0;
+> 		if (has_pipe && (close(fd[0]) < 0 || dup2(fd[1], STDOUT_FILENO) < 0 || close(fd[1]) < 0))
+66,77c71,78
+< 	else
+< 	{
+< 		waitpid(pid, &status, 0);
+< 		if (has_pipe && (close(fd[1]) < 0 || dup2(fd[0], STDIN_FILENO) < 0 || close(fd[0]) < 0))
+< 			return (error_("error: fatal", NULL));
+< 
+< 		if (WIFEXITED(status))
+< 			return (WEXITSTATUS(status));
+< 		else if (WIFSIGNALED(status))
+< 			return (WTERMSIG(status));
+< 	}
+< 	return (1);
+---
+> 	waitpid(pid, &status, 0);
+> 	if (has_pipe && (close(fd[1]) < 0 || dup2(fd[0], STDIN_FILENO) < 0 || close(fd[0]) < 0))
+> 		return (error_("error: fatal", NULL));
+> 	if (WIFEXITED(status))
+> 		return (WEXITSTATUS(status));
+> 	else if (WIFSIGNALED(status))
+> 		return (WTERMSIG(status));
+> 	return (0);
+82,84c83,84
+< 	int	i;
+< 	int	status;
+< 	int savefd;
+---
+> 	int		i;
+> 	int		status;
+86,87c86
+< 	savefd = dup(STDIN_FILENO);
+< 	i = 0;
+---
+> 	i = 1;
+95c94
+< 		while(av[i] && strcmp(av[i], "|") && strcmp(av[i], ";"))
+---
+> 		while (av[i] && strcmp(av[i], "|") && strcmp(av[i], ";"))
+100c99
+< 			status = exec(av, env, i, savefd);
+---
+> 			status = exec(av, env, i);
