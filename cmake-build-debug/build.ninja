@@ -56,15 +56,22 @@ build CMakeFiles/exam_rank_04.dir/microshell.c.o: C_COMPILER__exam_rank_04_unsca
   OBJECT_DIR = CMakeFiles/exam_rank_04.dir
   OBJECT_FILE_DIR = CMakeFiles/exam_rank_04.dir
 
-build CMakeFiles/exam_rank_04.dir/test.c.o: C_COMPILER__exam_rank_04_unscanned_Debug /Users/mariyadancheva/Documents/GitHub/exam-rank-04/test.c || cmake_object_order_depends_target_exam_rank_04
-  DEP_FILE = CMakeFiles/exam_rank_04.dir/test.c.o.d
+build CMakeFiles/exam_rank_04.dir/microshell2.c.o: C_COMPILER__exam_rank_04_unscanned_Debug /Users/mariyadancheva/Documents/GitHub/exam-rank-04/microshell2.c || cmake_object_order_depends_target_exam_rank_04
+  DEP_FILE = CMakeFiles/exam_rank_04.dir/microshell2.c.o.d
   FLAGS = -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/mariyadancheva/Documents/GitHub/exam-rank-04/.
   OBJECT_DIR = CMakeFiles/exam_rank_04.dir
   OBJECT_FILE_DIR = CMakeFiles/exam_rank_04.dir
 
-build CMakeFiles/exam_rank_04.dir/micro.c.o: C_COMPILER__exam_rank_04_unscanned_Debug /Users/mariyadancheva/Documents/GitHub/exam-rank-04/micro.c || cmake_object_order_depends_target_exam_rank_04
-  DEP_FILE = CMakeFiles/exam_rank_04.dir/micro.c.o.d
+build CMakeFiles/exam_rank_04.dir/microshell3.c.o: C_COMPILER__exam_rank_04_unscanned_Debug /Users/mariyadancheva/Documents/GitHub/exam-rank-04/microshell3.c || cmake_object_order_depends_target_exam_rank_04
+  DEP_FILE = CMakeFiles/exam_rank_04.dir/microshell3.c.o.d
+  FLAGS = -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/mariyadancheva/Documents/GitHub/exam-rank-04/.
+  OBJECT_DIR = CMakeFiles/exam_rank_04.dir
+  OBJECT_FILE_DIR = CMakeFiles/exam_rank_04.dir
+
+build CMakeFiles/exam_rank_04.dir/test.c.o: C_COMPILER__exam_rank_04_unscanned_Debug /Users/mariyadancheva/Documents/GitHub/exam-rank-04/test.c || cmake_object_order_depends_target_exam_rank_04
+  DEP_FILE = CMakeFiles/exam_rank_04.dir/test.c.o.d
   FLAGS = -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/mariyadancheva/Documents/GitHub/exam-rank-04/.
   OBJECT_DIR = CMakeFiles/exam_rank_04.dir
@@ -78,7 +85,7 @@ build CMakeFiles/exam_rank_04.dir/micro.c.o: C_COMPILER__exam_rank_04_unscanned_
 #############################################
 # Link the executable exam_rank_04
 
-build exam_rank_04: C_EXECUTABLE_LINKER__exam_rank_04_Debug CMakeFiles/exam_rank_04.dir/microshell.c.o CMakeFiles/exam_rank_04.dir/test.c.o CMakeFiles/exam_rank_04.dir/micro.c.o
+build exam_rank_04: C_EXECUTABLE_LINKER__exam_rank_04_Debug CMakeFiles/exam_rank_04.dir/microshell.c.o CMakeFiles/exam_rank_04.dir/microshell2.c.o CMakeFiles/exam_rank_04.dir/microshell3.c.o CMakeFiles/exam_rank_04.dir/test.c.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk
   OBJECT_DIR = CMakeFiles/exam_rank_04.dir
   POST_BUILD = :

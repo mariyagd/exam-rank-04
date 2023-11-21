@@ -42,17 +42,23 @@ void	descriptors_points(int fd1, int fd2, char *s)
 		printf("fd1 et %s pointent vers des fichiers différents.\n", s);
 }
 
+void	change_descriptor(int *fd, int fd2)
+{
+	close(*fd);
+	dup2(fd2, *fd);
+}
+
 int	main(void)
 {
 	int fd1, fd2, fd3, fd4;
-	struct stat stat1, stat2, stat3, stat4;
 
 
-	fd1 = open("./ok.c", O_RDONLY);
+	fd1 = open("./microshell.c", O_RDONLY);
 	fd2 = fd1;
 	fd3 = dup(fd1);
-	fd4 = open("./micro.c", O_RDONLY);
-	dup2(fd1, fd4);
+	fd4 = open("./mine", O_RDONLY);
+
+	//change_descriptor(&fd4, fd1);
 
 	printf("fd1 = %d\n", fd1);
 	printf("fd2 = %d\n", fd2);

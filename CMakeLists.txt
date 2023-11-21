@@ -9,4 +9,5 @@ add_executable(exam_rank_04
         microshell.c
         microshell2.c
         microshell3.c
-        microshell.h)
+        microshell.h
+        test.c)

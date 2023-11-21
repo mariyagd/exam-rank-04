@@ -32,3 +32,10 @@ N'oubliez pas de passer les variables d'environment à execve
 Conseils:
 Ne fuitez pas de file descriptor!
 ```
+```
+error: cd: bad arguments
+
+error: cd: cannot change directory to 
+
+error: cannot execute 
+```
