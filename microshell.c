@@ -70,7 +70,11 @@ int before_pipe(char **av, char **env, int *tmp_fd, int i)
 		return (error_("error: fatal", NULL);
 	pid = fork();
 	if (pid < 0)
+	{
+		close(fd[0]);
+		close(fd[1]);
 		return (error_("error: fatal", NULL));
+	}
 	else if (pid == 0)
 	{
 		av[i] = NULL;
@@ -99,11 +103,7 @@ int after_pipe(char **av, char **env, int *tmp_fd, int i)
 
 	pid = fork();
 	if (pid < 0)
-	{
-		close(fd[0]);
-		close(fd[1]);
 		return (error_("error: fatal", NULL));
-	}
 	else if (pid == 0)
 	{
 		av[i] = NULL;
