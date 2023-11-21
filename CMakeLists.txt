@@ -7,6 +7,6 @@ include_directories(.)
 
 add_executable(exam_rank_04
         microshell.c
-        microshell.h
-        test.c
-        micro.c)
+        microshell2.c
+        microshell3.c
+        microshell.h)

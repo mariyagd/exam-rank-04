@@ -16,5 +16,10 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
+#include <errno.h>
+
+# define	LEFT_COMMAND		1
+# define	RIGHT_COMMAND		2
+# define	CD_COMMAND			3
 
 #endif
