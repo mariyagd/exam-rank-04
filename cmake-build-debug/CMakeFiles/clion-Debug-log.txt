@@ -1,6 +1,4 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/ninja -G Ninja -S /Users/mdanchev/Desktop/exam-rank-04 -B /Users/mdanchev/Desktop/exam-rank-04/cmake-build-debug
-CMake Error at CMakeLists.txt:1 (cmake_minimum_required):
-  CMake 3.26 or higher is required.  You are running version 3.25.2
-
-
--- Configuring incomplete, errors occurred!
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/ninja -G Ninja -S /Users/mariyadancheva/Documents/GitHub/exam-rank-04 -B /Users/mariyadancheva/Documents/GitHub/exam-rank-04/cmake-build-debug
+-- Configuring done (0.1s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/mariyadancheva/Documents/GitHub/exam-rank-04/cmake-build-debug
