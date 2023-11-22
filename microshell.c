@@ -166,16 +166,6 @@ int after_pipe(char **av, char **env, int i, int *tmp_fd)
 	return (1);
 }
 
-int is_descriptor_open(int fd)
-{
-	int flags;
-
-	flags = fcntl(fd, F_GETFL);
-	if (flags == -1)
-		return -1;
-	return (flags);
-}
-
 int commands(char **av, char **env)
 {
 	int i, status, tmp_fd;
